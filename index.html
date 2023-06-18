@@ -129,10 +129,10 @@
 <!--        <h2 class="title is-3">Generation</h2>-->
 
         <!-- Interpolating. -->
-        <h3 class="title is-3">Class-guide</h3>
+        <h3 class="title is-3">Class-guide generation</h3>
         <div class="content has-text-justified">
-          <p>
-
+          <p style="text-align:center">
+<!--            Our huge model can generate high quality and rich diversity meshes.-->
           </p>
         </div>
         <figure>
@@ -144,6 +144,8 @@
             Generated meshes of planes
           </p>
         </figure>
+        <br/>
+
         <figure>
           <video class="centered" width="100%" autoplay="" loop="" muted="" playsinline="" >
             <source src="static/videos/car.mp4" type="video/mp4">
@@ -153,6 +155,7 @@
             Generated meshes of cars
           </p>
         </figure>
+        <br/>
         <figure>
           <video class="centered" width="100%" autoplay="" loop="" muted="" playsinline="" >
             <source src="static/videos/chair.mp4" type="video/mp4">
@@ -163,15 +166,30 @@
           </p>
         </figure>
         <br/>
-        <!--/ Interpolating. -->
-        <h3 class="title is-3">Image-guide</h3>
+        <br/>
+        <!--/ Image-guide generation. -->
+        <h3 class="title is-3">Image-guide generation</h3>
         <figure style="text-align:center">
           <a>
             <img width="70%"  src="static/images/img_guide.png">
           </a>
           <div class="content has-text-justified">
-            <p>
+            <p class="caption" style="text-align:center">
               Generated meshes from input image
+            </p>
+          </div>
+        </figure>
+        <br/>
+
+        <!--/ Text-guide generation. -->
+        <h3 class="title is-3">Text-guide generation</h3>
+        <figure style="text-align:center">
+          <a>
+            <img width="70%"  src="static/images/text_guide.png">
+          </a>
+          <div class="content has-text-justified">
+            <p class="caption" style="text-align:center">
+              Generated meshes from input text prompt
             </p>
           </div>
 
@@ -179,7 +197,7 @@
         <!-- Re-rendering. -->
         <h3 class="title is-3">Texture</h3>
         <div class="content has-text-justified">
-          <p>
+          <p >
             The generated meshes by our model can be textured by using state-of-the-arts methods like <a href="https://github.com/TEXTurePaper/TEXTurePaper">TEXTure</a>.
           </p>
         </div>
