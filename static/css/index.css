@@ -26,8 +26,16 @@ body {
 .teaser {
   font-family: 'Google Sans', sans-serif;
 }
-
-
+.image-container {
+    /*width: 100%;*/
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch; /* 可选 */
+}
+.image-container img {
+    display: block;
+    /*width: 100%;*/
+    /*height: auto;*/
+}
 .publication-title {
 }
 
@@ -112,11 +120,32 @@ body {
 
 .publication-body img {
 }
-
+/*.image-container {*/
+/*    width: 800px;*/
+/*    max-height: 600px;*/
+/*    !*overflow: auto;*!*/
+/*    overflow : scroll*/
+/*}*/
 .results-carousel {
   overflow: hidden;
 }
-
+.g-scroll {
+    width: 1200px;
+    height: 600px;
+    border: 1px solid #000000;
+    overflow: scroll;
+}
+.g-pesudo {
+    width: 2400px;
+    height: 600px;
+    /*background: linear-gradient(rgba(122, 122, 50, .3), rgba(20, 200, 150, .3))*/
+}
+/*.image-container img {*/
+/*    width: 800px;*/
+/*    height: auto;*/
+/*    object-fit: none;*/
+/*    object-position: top left;*/
+/*}*/
 .results-carousel .item {
   margin: 5px;
   overflow: hidden;
@@ -158,3 +187,5 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+
