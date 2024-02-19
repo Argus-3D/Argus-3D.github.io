@@ -47,24 +47,32 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Pushing the Limits of 3D Shape Generation at Scale</h1>
+          <h1 class="title is-2 publication-title">Pushing Auto-regressive Models for 3D Shape Generation at Capacity and Scalability</h1>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="">Yu Wang</a><sup></sup>,</span>
             <span class="author-block">
               <a href="https://naiq.github.io">Xuelin Qian</a><sup></sup>,</span>
             <span class="author-block">
-              <a href="https://jingyanghuo.github.io">Jingyang Huo</a><sup></sup>,
-            </span>
+              <a href="">Yu Wang</a><sup></sup>,</span>
             <span class="author-block">
-              <a href="">Tiejun Huang</a><sup></sup>,
-            </span>
+              <a href="https://naiq.github.io">Simian Luo</a><sup></sup>,</span>
             <span class="author-block">
-              <a href="https://www.bozhao.me">Bo Zhao</a><sup></sup>,
-            </span>
+              <a href="https://jingyanghuo.github.io">Yinda Zhang</a><sup></sup>,</span>
             <span class="author-block">
-              <a href="https://yanweifu.github.io">Yanwei Fu</a><sup></sup>,
-            </span>
+              <a href="https://jingyanghuo.github.io">Ying Tai</a><sup></sup>,</span>
+            <span class="author-block">
+              <a href="https://jingyanghuo.github.io">Zhenyu Zhang</a><sup></sup>,</span>
+            <span class="author-block">
+              <a href="https://jingyanghuo.github.io">Chengjie Wang</a><sup></sup>,</span>
+            <span class="author-block">
+              <a href="https://jingyanghuo.github.io">Xiangyang Xue</a><sup></sup>,</span>
+            <span class="author-block">
+              <a href="https://www.bozhao.me">Bo Zhao</a><sup></sup>,</span>
+            <span class="author-block">
+              <a href="">Tiejun Huang</a><sup></sup>,</span>
+            <span class="author-block">
+              <a href="https://yanweifu.github.io">Yunsheng Wu</a><sup></sup>,</span>
+            <span class="author-block">
+              <a href="https://yanweifu.github.io">Yanwei Fu</a><sup></sup>,</span>
 <!--            <span class="author-block">-->
 <!--              <a href="https://yanweifu.github.io">Ricardo Martin-Brualla</a><sup>2</sup>-->
 <!--            </span>-->
@@ -72,7 +80,8 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup></sup>Fudan University</span>
-            <span class="author-block"><sup></sup>&nbsp&nbsp&nbspBeijing Academy of Artificial Intelligence</span>
+            <span class="author-block"><sup></sup>&nbsp&nbsp&nbsp Beijing Academy of Artificial Intelligence</span>
+            <span class="author-block"><sup></sup>&nbsp&nbsp&nbsp Tencent Youtu lab</span>
           </div>
 
           <div class="column has-text-centered">
@@ -113,11 +122,33 @@
     <div class="flex-row">
       <figure style="width: 100%;">
         <a>
-          <img width="100%" src="static/images/architecture.png">
+          <img width="100%" src="static/images/primary.png">
         </a>
       </figure>
       <p style="text-align:justify">
-        We present a significant breakthrough in 3D shape generation by scaling it to unprecedented dimensions. Through the adaptation of the Auto-Regressive model and the utilization of large language models, we have developed a remarkable model with an astounding <b >3.6 billion</b> trainable parameters, establishing it as the largest 3D shape generation model to date, named <b><i>Argus-3D</i></b>. Our approach addresses the limitations of existing methods by enhancing the quality and diversity of generated 3D shapes. To tackle the challenges of high-resolution 3D shape generation, our model incorporates tri-plane features as latent representations, effectively reducing computational complexity. Additionally, we introduce a discrete codebook for efficient quantization of these representations. Leveraging the power of transformers, we enable multi-modal conditional generation, facilitating the production of diverse and visually impressive 3D shapes. To train our expansive model, we leverage an ensemble of publicly-available 3D datasets, consisting of a comprehensive collection of approximately <b >900,000 objects</b> from renowned repositories such as ModelNet40, ShapeNet, Pix3D, 3D-Future, and Objaverse. This diverse dataset empowers our model to learn from a wide range of object variations, bolstering its ability to generate high-quality and diverse 3D shapes. Through extensive experimentation, we demonstrate the remarkable efficacy of our approach in significantly improving the visual quality of generated 3D shapes. By pushing the boundaries of 3D generation, introducing novel methods for latent representation learning, and harnessing the power of transformers for multi-modal conditional generation, our contributions pave the way for substantial advancements in the field. Our work unlocks new possibilities for applications in gaming, virtual reality, product design, and other domains that demand high-quality and diverse 3D objects.
+          Auto-regressive models have achieved impressive results in 2D image generation by modeling joint distributions in grid space.
+          In this paper, we extend auto-regressive models to 3D domains, and seek a stronger ability of 3D shape generation by improving
+          auto-regressive models at capacity and scalability simultaneously. Firstly, we leverage an ensemble of publicly available 3D datasets
+          to facilitate the training of large-scale models. It consists of a comprehensive collection of approximately 900,000 objects, with
+          multiple properties of meshes, points, voxels, rendered images, and text captions.
+          This diverse <i>labeled</i> dataset, termed <b><i>Objaverse-Mix</i></b>, empowers our model to learn from a wide range of object
+          variations. For data processing, we employ four machines with 64-core CPUs and 8 A100 GPUs each over four weeks, utilizing nearly 100TB
+          of storage due to process complexity.
+      </p>
+      <p style="text-align:justify">
+          However, directly applying 3D auto-regression encounters critical challenges of high computational demands on volumetric grids and
+          ambiguous auto-regressive order along grid dimensions, resulting in inferior quality of 3D shapes. To this end, we then present a
+          novel framework <b><i>Argus3D</i></b> in terms of capacity.
+          Concretely, our approach introduces discrete representation learning based on a latent vector instead of volumetric grids, which
+          not only reduces computational costs but also preserves essential geometric details by learning the joint distributions in a more
+          tractable order. The capacity of conditional generation can thus be realized by simply concatenating various conditioning inputs
+          to the latent vector, such as point clouds, categories, images, and texts. In addition, thanks to the simplicity of our model
+          architecture, we naturally scale up our approach to a larger model with an impressive 3.6 billion parameters, further enhancing
+          the quality of versatile 3D generation.
+      </p>
+      <p style="text-align:justify">
+          Extensive experiments on four generation tasks demonstrate that Argus3D can synthesize diverse and faithful shapes across multiple
+          categories, achieving remarkable performance.
       </p>
     </div>
   </div>
